@@ -16,7 +16,7 @@ const AddTodo: React.FC<IAddTodo> = ({ onTodoAdd }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={text}

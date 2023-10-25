@@ -41,19 +41,22 @@ const TodoList: React.FC<ITodoList> = ({
               />
             </>
           ) : (
-            <>
-              <input
-                type="checkbox"
-                checked={t.isDone}
-                onChange={(e) => handleCheck(e, t.id)}
-              />
-              <span style={t.isDone ? { textDecoration: "line-through" } : {}}>
-                {t.text}
-              </span>
-
-              <button onClick={() => handleEdit(t.id)}>edit</button>
-              <button onClick={() => handleDelete(t.id)}>delete</button>
-            </>
+            <div className="list">
+              <div className="inp-text">
+                <input
+                  type="checkbox"
+                  checked={t.isDone}
+                  onChange={(e) => handleCheck(e, t.id)}
+                />
+                <p style={t.isDone ? { textDecoration: "line-through" } : {}}>
+                  {t.text}
+                </p>
+              </div>
+              <div>
+                <button onClick={() => handleEdit(t.id)}>edit</button>
+                <button onClick={() => handleDelete(t.id)}>delete</button>
+              </div>
+            </div>
           )}
         </div>
       ))}
